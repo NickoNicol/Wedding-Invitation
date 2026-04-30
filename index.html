@@ -72,7 +72,6 @@ body { font-family: var(--serif); background: var(--pink-pale); overflow-x: hidd
   z-index: 1; 
 }
 
-/* WAX SEAL WITH CIRCLE-ONLY LOGO CLIP */
 .wax-seal { 
   position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 10; 
   width: 80px; height: 80px; background: #fff; border-radius: 50%; 
@@ -83,7 +82,7 @@ body { font-family: var(--serif); background: var(--pink-pale); overflow-x: hidd
 .wax-seal img { 
   width: 100%; 
   height: 100%; 
-  border-radius: 50%; /* This forces the logo to be circular */
+  border-radius: 50%; 
   object-fit: cover;
 }
 .wax-seal:hover { transform: translate(-50%, -50%) scale(1.1); }
@@ -193,9 +192,23 @@ body { font-family: var(--serif); background: var(--pink-pale); overflow-x: hidd
 .map-card { background: var(--white); padding: 14px; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
 .map-label { font-family: var(--caps); font-size: 12px; letter-spacing: 2px; margin-bottom: 12px; color: var(--rose-dark); }
 
-/* NAMES LIST SECTION WITH UPDATED BG */
-#names-list { background: var(--rose-dark); padding: 70px 20px; text-align: center; position: relative; overflow: hidden; }
-.names-bg-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
+/* NAMES LIST SECTION FIX */
+#names-list { 
+  background: var(--rose-dark); 
+  padding: 70px 20px; 
+  text-align: center; 
+  position: relative; 
+  overflow: hidden; 
+}
+.names-bg-photo { 
+  position: absolute; 
+  inset: 0; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center 20%; /* Shifts image focus down to show faces */
+  opacity: 0.35; 
+}
 .names-content { position: relative; z-index: 2; text-shadow: 0 1px 10px rgba(0,0,0,0.4); }
 .names-section-title { font-family: var(--caps); font-size: 22px; letter-spacing: 7px; color: #fff; margin-bottom: 4px; }
 .names-script-sub { font-family: var(--script); font-size: 22px; color: var(--gold-light); margin-bottom: 30px; }
@@ -373,7 +386,7 @@ footer small { font-family: var(--caps); font-size: 9px; letter-spacing: 3px; co
       </div>
       <div class="detail-item">
         <div class="detail-item-title">CHURCH CEREMONY</div>
-        <div class="detail-item-text">The ceremony in the church will begin at <strong>3:00 PM</strong> in the afternoon.</div>
+        <div class="detail-item-text">The ceremony in the church will begin at <strong>3:00 PM</strong>.</div>
       </div>
       <div class="detail-item">
         <div class="detail-item-title">ATTIRE GUIDE</div>
@@ -385,14 +398,14 @@ footer small { font-family: var(--caps); font-size: 9px; letter-spacing: 3px; co
       </div>
       <div class="detail-item">
         <div class="detail-item-title">CAN I BRING SOMEONE WITH ME?</div>
-        <div class="detail-item-text">Unfortunately, due to space and seating constraints, we kindly ask for your understanding that only the people listed in the invitation will be present. To ensure that, every guest has a comfortable and enjoyable experience.</div>
+        <div class="detail-item-text">Unfortunately, due to space and seating constraints, only the people listed in the invitation will be accommodated. We kindly ask for your understanding to ensure that every guest has a comfortable and enjoyable experience.</div>
       </div>
       <div class="detail-item">
         <div class="detail-item-title">PRIVACY NOTE</div>
-        <div class="detail-item-text">Our wedding is a private ceremony reserved for our dearest and closest loved ones. We kindly ask that you refrain from sharing this information with other. We thank you for your understanding in adhering in our policy of not bringing uninvited people.</div>
+        <div class="detail-item-text">Our wedding is a private ceremony reserved for our dearest and closest loved ones. We kindly ask that you refrain from sharing this information with others. We thank you for your understanding in adhering in our policy of not bringing uninvited people.</div>
       </div>
       <div class="detail-item">
-        <div class="detail-item-title">ADULT ONLY EVENT</div>
+        <div class="detail-item-title">ADULT-ONLY EVENT</div>
         <div class="detail-item-text">As much as we love your children, we’ve made the difficult decision to keep our celebration an adult only event with the exception of the children on the entourage or those we’ve been personally spoken to. We sincerely appreciate your understanding and hope you enjoy our relaxing evening of celebration with us.</div>
       </div>
       <div class="detail-item" style="border-color: rgba(255,100,100,0.4);">
@@ -405,8 +418,8 @@ footer small { font-family: var(--caps); font-size: 9px; letter-spacing: 3px; co
 
 <!-- ENTOURAGE ATTIRE & MAPS -->
 <section id="entourage">
-  <h2 class="entourage-title fade-in">ENTOURAGE</h2>
-  <p class="entourage-sub fade-in">Guest Attire Guide</p>
+  <h2 class="entourage-title fade-in">Guest Attire Guide</h2>
+  <p class="entourage-sub fade-in"></p>
   
   <div class="fade-in" style="max-width: 400px; margin: 0 auto 60px;">
     <div class="css-palette">
@@ -506,7 +519,7 @@ footer small { font-family: var(--caps); font-size: 9px; letter-spacing: 3px; co
   <div class="faq-list fade-in">
     <div class="faq-item">
       <div class="faq-q"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>WHERE IS THE CEREMONY?</div>
-      <div class="faq-a">The ceremony will be held at Daraga Church, Daraga, Albay at 3:00 PM in the afternoon. We recommend arriving at least 30 minutes before it begins.</div>
+      <div class="faq-a">The ceremony will be held at Daraga Church, Daraga, Albay at 3:00 PM. We recommend arriving at least 30 minutes before it begins.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>WHERE IS THE RECEPTION?</div>
