@@ -58,7 +58,6 @@ body { font-family: var(--serif); background: var(--pink-pale); overflow-x: hidd
   overflow: hidden; 
 }
 
-/* Flap Fix */
 .envelope::before { 
   content: ''; position: absolute; top:0; left:0; right:0; height: 100%; 
   background: linear-gradient(150deg,#f8eee8 0%,#f0ddd4 100%); 
@@ -66,7 +65,6 @@ body { font-family: var(--serif); background: var(--pink-pale); overflow-x: hidd
   z-index: 4; 
 }
 
-/* Pockets Fix */
 .envelope::after { 
   content: ''; position: absolute; bottom:0; left:0; right:0; top:0; 
   background: linear-gradient(to bottom-right,transparent 49.5%,#edddd4 50%) left/50% 100% no-repeat, 
@@ -74,6 +72,7 @@ body { font-family: var(--serif); background: var(--pink-pale); overflow-x: hidd
   z-index: 1; 
 }
 
+/* WAX SEAL WITH CIRCLE-ONLY LOGO CLIP */
 .wax-seal { 
   position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 10; 
   width: 80px; height: 80px; background: #fff; border-radius: 50%; 
@@ -81,7 +80,12 @@ body { font-family: var(--serif); background: var(--pink-pale); overflow-x: hidd
   box-shadow: 0 5px 18px rgba(0,0,0,0.2), inset 0 0 0 2px var(--rose-light); 
   transition: transform 0.3s, box-shadow 0.3s; 
 }
-.wax-seal img { width: 85%; height: auto; }
+.wax-seal img { 
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%; /* This forces the logo to be circular */
+  object-fit: cover;
+}
 .wax-seal:hover { transform: translate(-50%, -50%) scale(1.1); }
 
 .lift-text { font-family: var(--caps); font-size: 10px; letter-spacing: 4px; color: rgba(255,255,255,0.8); margin-top: 26px; text-align: center; }
@@ -89,7 +93,7 @@ body { font-family: var(--serif); background: var(--pink-pale); overflow-x: hidd
 /* NAV */
 .site-nav { background: var(--rose-dark); padding: 12px 20px; display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
 .nav-logo { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; background: #fff; margin: 0 12px; border: 1.5px solid var(--gold-light); display: flex; align-items: center; justify-content: center; }
-.nav-logo img { width: 90%; height: auto; }
+.nav-logo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 .site-nav a { font-family: var(--caps); font-size: 9px; letter-spacing: 1.5px; color: rgba(255,255,255,0.85); text-decoration: none; padding: 4px 7px; transition: color 0.2s; }
 .site-nav a:hover { color: var(--gold-light); }
 
@@ -189,10 +193,10 @@ body { font-family: var(--serif); background: var(--pink-pale); overflow-x: hidd
 .map-card { background: var(--white); padding: 14px; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
 .map-label { font-family: var(--caps); font-size: 12px; letter-spacing: 2px; margin-bottom: 12px; color: var(--rose-dark); }
 
-/* NAMES */
+/* NAMES LIST SECTION WITH UPDATED BG */
 #names-list { background: var(--rose-dark); padding: 70px 20px; text-align: center; position: relative; overflow: hidden; }
-.names-bg-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.18; }
-.names-content { position: relative; z-index: 2; }
+.names-bg-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
+.names-content { position: relative; z-index: 2; text-shadow: 0 1px 10px rgba(0,0,0,0.4); }
 .names-section-title { font-family: var(--caps); font-size: 22px; letter-spacing: 7px; color: #fff; margin-bottom: 4px; }
 .names-script-sub { font-family: var(--script); font-size: 22px; color: var(--gold-light); margin-bottom: 30px; }
 .names-role-title { font-family: var(--script); font-size: 22px; color: var(--gold-light); margin: 18px 0 6px; }
@@ -368,6 +372,10 @@ footer small { font-family: var(--caps); font-size: 9px; letter-spacing: 3px; co
         <div class="detail-item-text">We have reserved a seat exclusively for you. Kindly scan the QR code to confirm your attendance on or before <strong>May 15, 2026</strong>.</div>
       </div>
       <div class="detail-item">
+        <div class="detail-item-title">CHURCH CEREMONY</div>
+        <div class="detail-item-text">The ceremony in the church will begin at <strong>3:00 PM</strong> in the afternoon.</div>
+      </div>
+      <div class="detail-item">
         <div class="detail-item-title">ATTIRE GUIDE</div>
         <div class="detail-item-text">Let our wedding be your excuse to get glammed up. We would like to see you dressed in a <strong>SEMI FORMAL ATTIRE</strong> that reflects your unique style and personality in any shade of our motif. We highly encourage everyone to dress accordingly to color palette.</div>
       </div>
@@ -386,11 +394,6 @@ footer small { font-family: var(--caps); font-size: 9px; letter-spacing: 3px; co
       <div class="detail-item">
         <div class="detail-item-title">ADULT ONLY EVENT</div>
         <div class="detail-item-text">As much as we love your children, we’ve made the difficult decision to keep our celebration an adult only event with the exception of the children on the entourage or those we’ve been personally spoken to. We sincerely appreciate your understanding and hope you enjoy our relaxing evening of celebration with us.</div>
-      </div>
-      <!-- Church Ceremony Start Time Update -->
-      <div class="detail-item">
-        <div class="detail-item-title">CHURCH CEREMONY</div>
-        <div class="detail-item-text">The ceremony in the church will begin at <strong>3:00 PM</strong> in the afternoon.</div>
       </div>
       <div class="detail-item" style="border-color: rgba(255,100,100,0.4);">
         <div class="detail-item-title" style="color: #ffcccc;">REMINDERS</div>
@@ -430,7 +433,7 @@ footer small { font-family: var(--caps); font-size: 9px; letter-spacing: 3px; co
   </div>
 </section>
 
-<!-- NAMES LIST -->
+<!-- NAMES LIST SECTION -->
 <section id="names-list">
   <img src="7.jpg" alt="" class="names-bg-photo">
   <div class="names-content fade-in">
@@ -454,7 +457,6 @@ footer small { font-family: var(--caps); font-size: 9px; letter-spacing: 3px; co
     </div>
     <div class="divider-rose"></div>
     
-    <!-- Best Man & Maid of Honor Hierarchical Order -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:400px;margin:0 auto">
       <div><div class="names-role-title" style="font-size:20px">Best Man</div><p class="names-row">NELMARK M. GONZALES</p></div>
       <div><div class="names-role-title" style="font-size:20px">Maid of Honor</div><p class="names-row">JERRYLENE A. NICOL</p></div>
@@ -483,7 +485,6 @@ footer small { font-family: var(--caps); font-size: 9px; letter-spacing: 3px; co
     </div>
     <div class="divider-rose"></div>
     
-    <!-- Little Ones Balanced Layout -->
     <div style="font-family:var(--caps);font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.65);margin-bottom:10px">LITTLE ONES</div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;max-width:560px;margin:0 auto">
       <div><div style="font-family:var(--script);font-size:18px;color:var(--gold-light)">Flower Girl</div><p class="names-row">ALISHA KANNARIE G. DELA PEÑA</p></div>
